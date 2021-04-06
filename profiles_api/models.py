@@ -41,13 +41,13 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
     objects = UserProfileManager()
 
     USERNAME_FIELD = 'email' #username 'i email olarak belirliyor
-    REQUIRED_FIRLEDS = ['name'] #email alanı USERNAME_FIELD nedeni ile zaten zorunlu
+    REQUIRED_FIELDS = ['name'] #email alanı USERNAME_FIELD nedeni ile zaten zorunlu
 
     def get_full_name(self): #self parametreseinin nedeni, python 'da class altına fonksiyon tanımlıyorsak kullanılır.
         """Retrieve full name of user"""
         return self.name
 
-    def get_full_name(self):
+    def get_short_name(self):
         """Retrieve short name of user"""
         return self.name
 
